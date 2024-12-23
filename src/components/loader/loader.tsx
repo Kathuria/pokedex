@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 
 const Apploader = ({ className }) => {
     return (
-        <>
-            <div className={className}>
-                <Loader size="md" content="Loading..." />
-            </div>
-        </>
+        <div className={className}>
+            <Loader size="md" content="Loading..." />
+        </div>
     )
 }
 

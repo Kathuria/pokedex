@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 const SearchFilter = ({ placeholder, inputClass, onChangeHandler, ...props }) => {
 
     return (
-        <>
             <div className="search-container">
                 <div className="flex-col">
                     <div className='search-label'><span>{props.label}</span></div>
@@ -21,8 +20,6 @@ const SearchFilter = ({ placeholder, inputClass, onChangeHandler, ...props }) =>
                 </div>
 
             </div>
-        </>
-
     )
 }
 SearchFilter.propTypes = {

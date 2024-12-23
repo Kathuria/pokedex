@@ -32,7 +32,7 @@ const PropertyCard = ({ speciesData, data, pokemonTypeData }) => {
           <Col xs={12} sm={12} lg={6} xl={6}>
             <div className='flex-col'>
               <div><span className="prop-header">Egg Groups</span></div>
-              {speciesData.egg_groups.length && (speciesData.egg_groups.map((item, index) => (<span key={item.name} className='prop-header-data'>{getCamleCaseString(item.name)}
+              {speciesData.egg_groups.length && (speciesData.egg_groups.map((item, index: number) => (<span key={item.name} className='prop-header-data'>{getCamleCaseString(item.name)}
                 {speciesData.egg_groups.length !== index + 1 && (<span>,</span>)}
               </span>)))}
             </div>

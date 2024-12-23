@@ -170,7 +170,6 @@ const AppFilter = ({ ...props }) => {
     useEffect(() => {
         getAllPokemonType();
         getPokemonGendersList();
-
     }, []);
 
     return (
