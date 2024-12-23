@@ -5,7 +5,7 @@ import { Input, InputGroup } from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
 import PropTypes from 'prop-types';
 
-const SearchFilter = ({ placeholder, inputClass, onChangeHandler, ...props }) => {
+const SearchFilter = ({ placeholder, inputClass, onChangeHandler, ...props }: any) => {
 
     return (
             <div className="search-container">

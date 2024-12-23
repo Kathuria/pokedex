@@ -9,7 +9,7 @@ import EvolutionChainCard from '../../components/pokemonDetailsCard/evolutionCha
 import PropTypes from 'prop-types';
 
 
-const DetailPage = ({ isCardSelected, toggleModal, pokemonId, offset }) => {
+const DetailPage = ({ isCardSelected, toggleModal, pokemonId, offset }: any) => {
 
     const [currentPokemonId, setCurrentPokemonId] = useState(pokemonId);
     const handleClose = () => toggleModal();
@@ -56,7 +56,7 @@ const DetailPage = ({ isCardSelected, toggleModal, pokemonId, offset }) => {
                 open={isModalOpen}
                 onClose={handleClose}
                 onExited={() => {
-                    setPokemonData(null);
+                    setPokemonData(undefined);
                 }}
             >
                 {data ? (

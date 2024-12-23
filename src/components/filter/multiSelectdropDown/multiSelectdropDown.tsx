@@ -3,7 +3,7 @@ import { CheckPicker } from 'rsuite';
 import "./multiSelectdropDown.scss";
 import PropTypes from 'prop-types';
 
-const AppMultiSelectDropDown = ({ label, onChangeHandler, data, ...props }) => (
+const AppMultiSelectDropDown = ({ label, onChangeHandler, data, ...props }: any) => (
     <div className="multiselect-dropdown-wrapper">
       <div className='dropdown-label'><span>{label}</span></div>
       <div className={`${props.isOpen ? "is-dropdown-open" : ""} check-picker-wrap`}>

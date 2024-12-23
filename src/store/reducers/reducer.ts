@@ -13,7 +13,7 @@ export const initialState = {
 };
 
 
-export const reducer = (state, action) => {
+export const reducer = (state: any, action: any) => {
 
     switch (action.type) {
         case "ACTIONS.SET_POKEMON_LIST":

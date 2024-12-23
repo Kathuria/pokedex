@@ -16,12 +16,12 @@ const HomePage = () => {
   const [isFilterEnable, setIsFilterEnable] = useState(false);
 
 
-  const { state, getPokemonData } = useContext(PokemonContext);
+  const { state, getPokemonData } = useContext(PokemonContext) as any;
   const { pokemonsList, isLoading, isLoadMoreInprogress } = state;
 
   const pokemonsListView = useMemo(
     () =>
-      pokemonsList?.map((data) => (
+      pokemonsList?.map((data: any) => (
         <div key={data.id} className="responsive">
         <PokemonCard key={data.id} data={data} onClick={() => {
           setPokemonId(data.id);
@@ -40,7 +40,7 @@ const HomePage = () => {
     setToggleSelect((prevState) => !prevState);
   }
 
-  const isFilterEnableHandler = (isEnable) => {
+  const isFilterEnableHandler = (isEnable: boolean) => {
     setIsFilterEnable(isEnable);
   }
 
@@ -50,8 +50,8 @@ const HomePage = () => {
     <>
       <div className="home-container">
         <div>
-          <Header className="header-container">
-            <Row lg={24} xl={24} className="app-header-wrap show-grid">
+          <Header>
+            <Row className="app-header-wrap show-grid">
               <Col xs={12} sm={12} lg={5} xl={5}>
                 <div className="header-title">
                   <h3>Pokédex</h3>

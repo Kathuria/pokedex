@@ -2,10 +2,10 @@ import React from 'react';
 import "./evolutionChainCard.scss"
 import "../../../styles/common.scss";
 import PokemonCard from "../../pokemonCard/pokemonCard";
-import rightArrowIcon from "../../../assets/icons/right-arrow.png"
+import rightArrowIcon from "../../../assets/icons/right-arrow.png";
 import PropTypes from 'prop-types';
 
-const EvolutionChainCard = ({ data }) => {
+const EvolutionChainCard = ({ data }: any) => {
     const arrayele = [1, 2, 3];
 
     return (

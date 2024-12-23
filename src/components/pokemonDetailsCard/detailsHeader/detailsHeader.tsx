@@ -10,7 +10,7 @@ import "./detailsHeader.scss";
 import "../../../styles/common.scss";
 import PropTypes from 'prop-types';
 
-const DetailsHeader = ({ data, speciesData, ...props }) => {
+const DetailsHeader = ({ data, speciesData, ...props }: any) => {
 
     const getPokemonDescriptions = () => {
         if (speciesData && speciesData.flavor_text_entries) {
@@ -45,7 +45,7 @@ const DetailsHeader = ({ data, speciesData, ...props }) => {
                         </div>
                     </div>
                     <div className="text-description">
-                        <div className="text-dot"><span >{getPokemonDescriptions().substring(0, 363)} </span></div>
+                        <div className="text-dot"><span >{getPokemonDescriptions()?.substring(0, 363)} </span></div>
                         <div className="text-dot">... </div>
                         {getPokemonDescriptions().length > 363 && <AppTooltip placement="bottom" className="load-more" tooltipClass="tooltip-popover" name="read more" data={getPokemonDescriptions()} appearance="subtle" />}
                     </div>

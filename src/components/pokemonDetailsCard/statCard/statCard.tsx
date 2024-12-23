@@ -4,9 +4,9 @@ import { getCamleCaseString } from '../../../constants/pokemon.types';
 import "./statCard.scss";
 import PropTypes from 'prop-types';
 
-const StatCard = ({ stats }) => {
+const StatCard = ({ stats }: any) => {
   // const {data} = data;
-  const getStatHeading = (name) => {
+  const getStatHeading = (name: string) => {
     if (name === "hp") {
       return "HP"
     } else {
@@ -24,7 +24,7 @@ const StatCard = ({ stats }) => {
         <div>
           <Grid fluid>
             <Row className="show-grid">
-              {stats && stats.map(item => (<Col key={item.stat.name} className="pl-0 pt-1" lg={12} xl={12} xs={24} sm={24}>
+              {stats && stats.map((item : any) => (<Col key={item.stat.name} className="pl-0 pt-1" lg={12} xl={12} xs={24} sm={24}>
                 <div className='stat-flex-row'>
                   <Col xs={4} lg={8} xl={8} className="pl-0 pr-0">
                     <div><span className="prop-header">{getStatHeading(item.stat.name)}</span></div>
