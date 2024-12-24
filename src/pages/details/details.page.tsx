@@ -13,7 +13,7 @@ const DetailPage = ({ isCardSelected, toggleModal, pokemonId, offset }: any) => 
 
     const [currentPokemonId, setCurrentPokemonId] = useState(pokemonId);
     const handleClose = () => toggleModal();
-    const [data, setPokemonData] = useState();
+    const [data, setPokemonData] = useState(null);
     const [isDetailLoading, setLoading] = useState(true);
     const [isModalOpen, setCloseModal] = useState(isCardSelected);
     const [pokemonSpeciesData, setPokemonSpeciesData] = useState();
@@ -56,7 +56,7 @@ const DetailPage = ({ isCardSelected, toggleModal, pokemonId, offset }: any) => 
                 open={isModalOpen}
                 onClose={handleClose}
                 onExited={() => {
-                    setPokemonData(undefined);
+                    setPokemonData(null);
                 }}
             >
                 {data ? (
@@ -73,7 +73,7 @@ const DetailPage = ({ isCardSelected, toggleModal, pokemonId, offset }: any) => 
                                     {pokemonTypeData && (<PropertyCard speciesData={pokemonSpeciesData} data={data} pokemonTypeData={pokemonTypeData} />)}
                                 </div>
                                 <div className="padding-components">
-                                    {data.stats && (<StatCard stats={data.stats} />)}
+                                    {(data as any).stats && (<StatCard stats={(data as any).stats} />)}
                                 </div>
                                 <div className="padding-components">
                                     <EvolutionChainCard data={data} />

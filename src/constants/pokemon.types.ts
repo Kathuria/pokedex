@@ -1,5 +1,5 @@
-export const POKEMON_TYPE = Object.freeze({
-    nomrnal: {
+export const POKEMON_TYPE: Record<string, {color: string, hex?: string}> = Object.freeze({
+    normal: {
         color: "#DDCBD0",
         hex: ""
     },
@@ -81,11 +81,11 @@ export const POKEMON_TYPE = Object.freeze({
     }
 })
 
-export const getPokcolor = (type) => {
+export const getPokcolor = (type: any) => {
     return POKEMON_TYPE[type] ? POKEMON_TYPE[type].color : POKEMON_TYPE['unknown'].color;
 }
 
-export const getBackground = (pokemonTypes) => {
+export const getBackground = (pokemonTypes: any) => {
     var color = "";
     if (pokemonTypes.length) {
         var { type: { name: pokemontype1 } } = pokemonTypes[0];
@@ -103,8 +103,8 @@ export const getBackground = (pokemonTypes) => {
 
 export const getPokemonDescription = (data = []) => {
     if (data.length) {
-        let uniqueTextArray = [];
-        return data.reduce((acc, next) => {
+        let uniqueTextArray: Array<string> = [];
+        return data.reduce((acc, next: {language: any, flavor_text: string}) => {
             if (next.language.name === "en" && !uniqueTextArray.includes(next.flavor_text)) {
                 uniqueTextArray.push(next.flavor_text);
                 return acc += next.flavor_text.replace(/\n|\f/g, " ");
@@ -112,6 +112,7 @@ export const getPokemonDescription = (data = []) => {
             return acc;
         }, "");
     }
+    return "";
 }
 
 export const getCamleCaseString = (str = "") => {

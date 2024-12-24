@@ -3,7 +3,7 @@ import "./header.scss";
 import PropTypes from 'prop-types';
 
 
-const Header = ({ children }) => {
+const Header = ({ children }: any) => {
   return (
     <header className="header">
       {children}

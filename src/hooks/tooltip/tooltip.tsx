@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 
 // eslint-disable-next-line react/display-name
-const DefaultPopover = forwardRef(({ content, className, ...props }, ref) => {
+const DefaultPopover = forwardRef(({ content, className, ...props }: any, ref) => {
     return (
         <Popover ref={ref} {...props} className={className} arrow={false}>
             <p>{content}</p>
         </Popover>
     );
 });
-const AppTooltip = ({ placement, data, className, name, tooltipClass }) => (
+const AppTooltip = ({ placement, data, className, name, tooltipClass }: any) => (
     <Whisper
         trigger="click"
         placement={placement}

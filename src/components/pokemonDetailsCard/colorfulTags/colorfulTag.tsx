@@ -3,7 +3,7 @@ import { getPokcolor } from '../../../constants/pokemon.types';
 import "./colorfulTags.scss";
 import PropTypes from 'prop-types';
 
-const ColorfulTag = ({ text, className, type }) => {
+const ColorfulTag = ({ text, className, type }: any) => {
 
 
     return (

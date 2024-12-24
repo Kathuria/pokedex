@@ -63,14 +63,14 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
     setAppLoading(false);
   };
 
-  const onTypeChangeHandler = (value: any[], event: React.FormEvent) => {
+  const onTypeChangeHandler = (value: any, event: React.FormEvent) => {
     event.preventDefault();
     if (value.length) {
       isFilterEnable(true);
       getAllParallelCall(value).then((pokemonList: any[]) => {
         pokemonList = pokemonList.map((res) => res.pokemon);
         pokemonList = pokemonList.flat().map((res) => res.pokemon);
-        pokemonList = removeDuplicateBy(pokemonList, 'name');
+        pokemonList = removeDuplicateBy(pokemonList as [], 'name');
         if (pokemonList.length > SEARCH_SLICED) {
           pokemonList = pokemonList.slice(-SEARCH_SLICED);
         }
@@ -85,7 +85,7 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
     }
   };
 
-  const onGenderChangeHandler = (value: any[], event: React.FormEvent) => {
+  const onGenderChangeHandler = (value: any, event: React.FormEvent) => {
     event.preventDefault();
     if (value.length) {
       isFilterEnable(true);

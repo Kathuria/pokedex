@@ -47,7 +47,7 @@ const DetailsHeader = ({ data, speciesData, ...props }: any) => {
                     <div className="text-description">
                         <div className="text-dot"><span >{getPokemonDescriptions()?.substring(0, 363)} </span></div>
                         <div className="text-dot">... </div>
-                        {getPokemonDescriptions().length > 363 && <AppTooltip placement="bottom" className="load-more" tooltipClass="tooltip-popover" name="read more" data={getPokemonDescriptions()} appearance="subtle" />}
+                        {getPokemonDescriptions().length > 363 && <AppTooltip placement="bottom" className="load-more" tooltipClass="tooltip-popover" name="read more" data={getPokemonDescriptions()} />}
                     </div>
                 </div>
             </div>

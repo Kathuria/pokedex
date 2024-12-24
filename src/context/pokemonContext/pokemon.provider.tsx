@@ -9,16 +9,16 @@ import {
     initialURL
 } from "../../services/common.service";
 
-export const PokemonProvider = ({ children }) => {
+export const PokemonProvider = ({ children }: any) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     var batchURL = useRef(initialURL);
-    const setAppLoading = (loading) => {
+    const setAppLoading = (loading: any) => {
         dispatch({
             type: "ACTIONS.SET_API_CALL_INPROGRESS",
             payload: loading,
         });
     };
-    const setLoadMoreDataInprogress = (loading) => {
+    const setLoadMoreDataInprogress = (loading: any) => {
         dispatch({
             type: "ACTIONS.SET_LOAD_MORE_API_CALL_INPROGRESS",
             payload: loading,
@@ -40,9 +40,9 @@ export const PokemonProvider = ({ children }) => {
         setLoadMoreDataInprogress(false);
     };
 
-    const getPokemonDetailsListByUrl = async (results) => {
+    const getPokemonDetailsListByUrl = async (results: []) => {
         const pokemonsDetailsList = await Promise.all(
-            results.map(async (pokemon) => {
+            results.map(async (pokemon: any) => {
                 const response = await fetch(pokemon.url);
                 const res = response.json();
                 return res;
@@ -60,7 +60,7 @@ export const PokemonProvider = ({ children }) => {
         });
     };
 
-    const setPokemonList = (pokemonsList) => {
+    const setPokemonList = (pokemonsList: any) => {
         dispatch({
             type: "ACTIONS.SET_POKEMON_LIST",
             payload: pokemonsList,
@@ -80,7 +80,7 @@ export const PokemonProvider = ({ children }) => {
                 getPokemonData,
                 getPokemonDetailsListByUrl,
                 setAppLoading
-            }}
+            } as any}
         >
             {children}
         </PokemonContext.Provider>
