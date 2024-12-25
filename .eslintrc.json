@@ -2,10 +2,19 @@
   "extends": [
     "react-app",
     "react-app/jest",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
-  "plugins": ["storybook"],
+  "plugins": [
+    "storybook",
+    "jsx-a11y"
+  ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
-        "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "jsx-a11y/anchor-is-valid": "warn",
+    "jsx-a11y/alt-text": "warn"
   }
 }
