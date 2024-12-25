@@ -23,7 +23,7 @@ describe('HomePage Component', () => {
 
   test('renders header and filter components', () => {
     render(
-      <PokemonContext.Provider value={mockContextValue}>
+      <PokemonContext.Provider value={mockContextValue as any}>
         <HomePage />
       </PokemonContext.Provider>
     );
@@ -34,7 +34,7 @@ describe('HomePage Component', () => {
 
   test('renders pokemon cards', () => {
     render(
-      <PokemonContext.Provider value={mockContextValue}>
+      <PokemonContext.Provider value={mockContextValue as any}>
         <HomePage />
       </PokemonContext.Provider>
     );
@@ -47,7 +47,7 @@ describe('HomePage Component', () => {
 
   test('calls getPokemonData on load more click', () => {
     render(
-      <PokemonContext.Provider value={mockContextValue}>
+      <PokemonContext.Provider value={mockContextValue as any}>
         <HomePage />
       </PokemonContext.Provider>
     );
@@ -60,7 +60,7 @@ describe('HomePage Component', () => {
   test('shows loading indicator when loading', () => {
     const loadingState = { ...mockState, isLoading: true };
     render(
-      <PokemonContext.Provider value={{ ...mockContextValue, state: loadingState }}>
+      <PokemonContext.Provider value={{ ...mockContextValue, state: loadingState } as any}>
         <HomePage />
       </PokemonContext.Provider>
     );
@@ -71,7 +71,7 @@ describe('HomePage Component', () => {
   test('shows no data found message when pokemon list is empty', () => {
     const emptyState = { ...mockState, pokemonsList: [] };
     render(
-      <PokemonContext.Provider value={{ ...mockContextValue, state: emptyState }}>
+      <PokemonContext.Provider value={{ ...mockContextValue, state: emptyState } as any}>
         <HomePage />
       </PokemonContext.Provider>
     );
