@@ -6,7 +6,6 @@
     "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
-    "storybook",
     "jsx-a11y"
   ],
   "parser": "@typescript-eslint/parser",
