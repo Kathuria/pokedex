@@ -28,7 +28,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "jsx-a11y/anchor-is-valid": "warn",
     "jsx-a11y/alt-text": "warn",
-    "no-var": "warn"
+    "no-var": "off"
   },
   "settings": {
     "react": {
