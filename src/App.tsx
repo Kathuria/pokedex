@@ -13,7 +13,7 @@ function App() {
   return (
     <main>
       <PokemonProvider>
-        <BrowserRouter basename="/pokedex-development">
+        <BrowserRouter basename="/pokedex">
           <Routes>
             <Route
               path={ROUTES.HOME}
