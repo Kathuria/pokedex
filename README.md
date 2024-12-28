@@ -21,7 +21,13 @@ Follow any Generative AI tools of your choice (e.g. Slingshot, AI Code Companion
 |Storybook|9|Tailored Storybook configurations with various addons suggest a capable setup. Ensuring coverage for all components could enhance evaluation.|
 |Jest|7|Jest is referenced within the configuration, but information on test coverage or specific configurations is sparse, necessitating more insight for comprehensive evaluation.|
 
-
 ## Preview
 
+[Storybook Components](https://kathuria.github.io/pokedex/storybook)
+
+[Pokedex](https://kathuria.github.io/pokedex)
+
 <img src="public/poke.png" alt="Pokedex Application">
+
+
+PS: Project is licensed under [Apache](./LICENSE).
