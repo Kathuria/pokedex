@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build && build-storybook",
+    "predeploy": "npm run build && npm run build-storybook",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
