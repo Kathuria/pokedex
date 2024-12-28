@@ -86,7 +86,7 @@ export const getPokcolor = (type: any) => {
 }
 
 export const getBackground = (pokemonTypes: any) => {
-    var color = "";
+    let color = "";
     if (pokemonTypes.length) {
         var { type: { name: pokemontype1 } } = pokemonTypes[0];
     }
@@ -103,7 +103,7 @@ export const getBackground = (pokemonTypes: any) => {
 
 export const getPokemonDescription = (data = []) => {
     if (data.length) {
-        let uniqueTextArray: Array<string> = [];
+        const uniqueTextArray: Array<string> = [];
         return data.reduce((acc, next: {language: any, flavor_text: string}) => {
             if (next.language.name === "en" && !uniqueTextArray.includes(next.flavor_text)) {
                 uniqueTextArray.push(next.flavor_text);
