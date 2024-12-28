@@ -4,8 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --silent",
@@ -14,7 +12,7 @@
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint-fix": "eslint src/**/*.{ts,tsx} --fix",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build -o build/storybook"
   },
   "engines": {
     "node": ">18.0.0"
