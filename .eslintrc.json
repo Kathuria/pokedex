@@ -6,12 +6,5 @@
   "plugins": [
     "jsx-a11y"
   ],
-  "parser": "@typescript-eslint/parser",
-  "rules": {
-    "react-hooks/exhaustive-deps": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "warn",
-    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-    "jsx-a11y/anchor-is-valid": "warn",
-    "jsx-a11y/alt-text": "warn"
-  }
+  "parser": "@typescript-eslint/parser"
 }
