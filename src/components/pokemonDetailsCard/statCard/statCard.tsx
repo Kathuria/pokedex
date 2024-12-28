@@ -10,8 +10,8 @@ const StatCard = ({ stats }: any) => {
     if (name === "hp") {
       return "HP"
     } else {
-      let [firstName, lastName] = name.split("-");
-      if (firstName === "special" && lastName) return firstName = "Sp. " + getCamleCaseString(lastName);
+      const [firstName, lastName] = name.split("-");
+      if (firstName === "special" && lastName) return "Sp. " + getCamleCaseString(lastName);
       else return getCamleCaseString(firstName)
     }
   }

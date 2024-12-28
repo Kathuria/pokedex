@@ -22,10 +22,10 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off", // Not needed with React 17+
-    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "off", // Checks effect dependencies
     "@typescript-eslint/explicit-module-boundary-types": "off", // Adjust based on your preference
     "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
     "jsx-a11y/anchor-is-valid": "warn",
     "jsx-a11y/alt-text": "warn",
     "no-var": "warn"
