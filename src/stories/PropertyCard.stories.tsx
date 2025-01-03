@@ -2,7 +2,6 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import PropertyCard from '../components/pokemonDetailsCard/propertyCard/propertyCard';
 
-// Mock data for the PropertyCard
 const mockSpeciesData = {
   egg_groups: [
     { name: 'monster' },

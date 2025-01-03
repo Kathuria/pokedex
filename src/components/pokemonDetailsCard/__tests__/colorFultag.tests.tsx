@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import ColorfulTag from '../colorfulTags/colorfulTag'; // Adjust the path as necessary
+import ColorfulTag from '../colorfulTags/colorfulTag';
 
-// Mock the getPokcolor function
 jest.mock('../../../constants/pokemon.types', () => ({
   getPokcolor: jest.fn(() => 'linear-gradient(to right, #ff7e5f, #feb47b)'),
 }));

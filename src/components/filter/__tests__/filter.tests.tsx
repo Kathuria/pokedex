@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import AppFilter from '../filter'; // Adjust the path as necessary
+import AppFilter from '../filter';
 import PokemonContext from '../../../context/pokemonContext/pokmon.context';
 
 const mockContextValue = {

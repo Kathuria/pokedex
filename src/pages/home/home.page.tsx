@@ -44,8 +44,6 @@ const HomePage = () => {
     setIsFilterEnable(isEnable);
   }
 
-  // if (isLoading) return (<Apploader className="app-loader-wrapper" />);
-
   return (
     <>
       <div className="home-container">

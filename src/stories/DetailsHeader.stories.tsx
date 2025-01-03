@@ -2,7 +2,6 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import DetailsHeader from '../components/pokemonDetailsCard/detailsHeader/detailsHeader';
 
-// Mock data for the DetailsHeader
 const mockPokemonData = {
   id: 25,
   name: 'Pikachu',

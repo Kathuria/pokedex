@@ -2,7 +2,6 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import StatCard from '../components/pokemonDetailsCard/statCard/statCard';
 
-// Mock data for the StatCard
 const mockStatsData = [
   { base_stat: 45, stat: { name: 'hp' } },
   { base_stat: 49, stat: { name: 'attack' } },

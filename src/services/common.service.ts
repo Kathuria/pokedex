@@ -59,7 +59,7 @@ export const getAllParallelCall = async (ApiUrls: [string]) => {
   return await Promise.all(
     ApiUrls.map(async url => {
       const res = await fetch(url);
-      return res.json(); // Send request for each id
+      return res.json();
     }));
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import PokemonCard from '../components/pokemonCard/pokemonCard';
 
-// Mock data for the PokemonCard
 const mockPokemonData = {
   name: 'Pikachu',
   id: 25,

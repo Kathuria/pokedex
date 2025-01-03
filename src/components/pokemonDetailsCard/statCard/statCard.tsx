@@ -5,7 +5,6 @@ import "./statCard.scss";
 import PropTypes from 'prop-types';
 
 const StatCard = ({ stats }: any) => {
-  // const {data} = data;
   const getStatHeading = (name: string) => {
     if (name === "hp") {
       return "HP"

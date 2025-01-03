@@ -2,7 +2,6 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import EvolutionChainCard from '../components/pokemonDetailsCard/evolutionChainCard/evolutionChainCard';
 
-// Mock data for the EvolutionChainCard
 const mockPokemonData = {
   id: 25,
   name: 'Pikachu',

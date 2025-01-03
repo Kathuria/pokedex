@@ -10,7 +10,6 @@ import AppMultiSelectDropDown from './multiSelectdropDown/multiSelectdropDown';
 import SearchFilter from './search/search.filter';
 import PropTypes from 'prop-types';
 
-// Define the types for props
 interface AppFilterProps {
   isFilterEnable: (enabled: boolean) => void;
 }

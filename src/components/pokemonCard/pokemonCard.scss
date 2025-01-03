@@ -4,8 +4,6 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
-  // height: 277px;
-  // background: linear-gradient(180deg, #C0D4C8 0%, #CFB7ED 100%);
   border: 1px dashed $bg-popover;
   border-radius: 8px;
   overflow: hidden;
@@ -43,8 +41,6 @@
 
   .image-container {
     @include flex-row;
-    // width: 100%;
-    // height: 180px;
     margin: 22px;
   }
 }

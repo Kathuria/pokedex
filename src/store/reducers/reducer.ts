@@ -1,6 +1,3 @@
-// import * as ACTIONS from "../../store/actions/pokemonAction";
-
-
 export const initialState = {
     pokemonsList: [],
     allPokemonsList: [],

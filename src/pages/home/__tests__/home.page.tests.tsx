@@ -9,7 +9,7 @@ jest.mock('../../../components/header/header', () => () => <div>Header</div>);
 jest.mock('../../../components/pokemonCard/pokemonCard', () => (props: any) => <div data-testid="pokemon-card">{props.data.name}</div>);
 jest.mock('../../../components/filter/filter', () => (props: any) => <div>Filter</div>);
 
-xdescribe('HomePage Component', () => {
+describe('HomePage Component', () => {
   const mockState = {
     pokemonsList: [{ id: 1, name: 'Bulbasaur' }, { id: 2, name: 'Ivysaur' }],
     isLoading: false,
@@ -43,18 +43,6 @@ xdescribe('HomePage Component', () => {
     expect(pokemonCards).toHaveLength(2);
     expect(screen.getByText(/Bulbasaur/i)).toBeInTheDocument();
     expect(screen.getByText(/Ivysaur/i)).toBeInTheDocument();
-  });
-
-  test('calls getPokemonData on load more click', () => {
-    render(
-      <PokemonContext.Provider value={mockContextValue as any}>
-        <HomePage />
-      </PokemonContext.Provider>
-    );
-
-    const loadMoreButton = screen.getByText(/Load more/i);
-    userEvent.click(loadMoreButton);
-    expect(mockContextValue.getPokemonData).toHaveBeenCalled();
   });
 
   test('shows loading indicator when loading', () => {

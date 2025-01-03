@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import PokemonCard from '../pokemonCard';
 
-// Mock the dependencies
 jest.mock('../../../constants/pokemon.types', () => ({
   getBackground: jest.fn(() => 'linear-gradient(to right, #30cfd0 0%, #330867 100%)'),
 }));

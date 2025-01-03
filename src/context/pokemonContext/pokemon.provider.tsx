@@ -3,7 +3,6 @@ import { useReducer, useEffect, useRef } from "react";
 import { initialState, reducer } from "../../store/reducers/reducer";
 import PokemonContext from "./pokmon.context";
 import PropTypes from 'prop-types';
-// import * as ACTIONS from "../../store/actions/pokemonAction";
 import {
     allPokemonURL,
     initialURL
