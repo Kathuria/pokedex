@@ -8,14 +8,14 @@ const mockPokemonData = {
   sprites: {
     other: {
       dream_world: {
-        front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg',
+        front_default:
+          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg',
       },
     },
-    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+    front_default:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
   },
-  types: [
-    { type: { name: 'electric' } },
-  ],
+  types: [{ type: { name: 'electric' } }],
 };
 
 export default {
@@ -28,7 +28,9 @@ export default {
   },
 } as Meta<typeof PokemonCard>;
 
-const Template: StoryFn<typeof PokemonCard> = (args) => <PokemonCard {...args} />;
+const Template: StoryFn<typeof PokemonCard> = (args) => (
+  <PokemonCard {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

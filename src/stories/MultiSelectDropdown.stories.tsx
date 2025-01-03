@@ -12,7 +12,9 @@ export default {
   },
 } as Meta<typeof AppMultiSelectDropDown>;
 
-const Template: StoryFn<typeof AppMultiSelectDropDown> = (args) => <AppMultiSelectDropDown {...args} />;
+const Template: StoryFn<typeof AppMultiSelectDropDown> = (args) => (
+  <AppMultiSelectDropDown {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

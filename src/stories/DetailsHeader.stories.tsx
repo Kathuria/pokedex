@@ -8,19 +8,23 @@ const mockPokemonData = {
   sprites: {
     other: {
       dream_world: {
-        front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg',
+        front_default:
+          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg',
       },
     },
-    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+    front_default:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
   },
-  types: [
-    { type: { name: 'electric' } },
-  ],
+  types: [{ type: { name: 'electric' } }],
 };
 
 const mockSpeciesData = {
   flavor_text_entries: [
-    { flavor_text: 'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.', language: { name: 'en' } },
+    {
+      flavor_text:
+        'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
+      language: { name: 'en' },
+    },
   ],
 };
 
@@ -36,7 +40,9 @@ export default {
   },
 } as Meta<typeof DetailsHeader>;
 
-const Template: StoryFn<typeof DetailsHeader> = (args) => <DetailsHeader {...args} />;
+const Template: StoryFn<typeof DetailsHeader> = (args) => (
+  <DetailsHeader {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

@@ -3,10 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import PropertyCard from '../components/pokemonDetailsCard/propertyCard/propertyCard';
 
 const mockSpeciesData = {
-  egg_groups: [
-    { name: 'monster' },
-    { name: 'dragon' },
-  ],
+  egg_groups: [{ name: 'monster' }, { name: 'dragon' }],
 };
 
 const mockData = {
@@ -16,19 +13,12 @@ const mockData = {
     { ability: { name: 'overgrow' } },
     { ability: { name: 'chlorophyll' } },
   ],
-  types: [
-    { type: { name: 'grass' } },
-    { type: { name: 'poison' } },
-  ],
+  types: [{ type: { name: 'grass' } }, { type: { name: 'poison' } }],
 };
 
 const mockPokemonTypeData = {
   damage_relations: {
-    double_damage_from: [
-      { name: 'fire' },
-      { name: 'flying' },
-      { name: 'ice' },
-    ],
+    double_damage_from: [{ name: 'fire' }, { name: 'flying' }, { name: 'ice' }],
   },
 };
 
@@ -42,7 +32,9 @@ export default {
   },
 } as Meta<typeof PropertyCard>;
 
-const Template: StoryFn<typeof PropertyCard> = (args) => <PropertyCard {...args} />;
+const Template: StoryFn<typeof PropertyCard> = (args) => (
+  <PropertyCard {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

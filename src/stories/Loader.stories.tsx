@@ -10,7 +10,9 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<{ className: string }> = (args: any) => <Apploader {...args} />;
+const Template: StoryFn<{ className: string }> = (args: any) => (
+  <Apploader {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

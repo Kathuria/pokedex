@@ -4,7 +4,12 @@ import { debounceTime, distinctUntilChanged, map, of, Observable } from 'rxjs';
 import { baseURL, SEARCH_SLICED } from '../../constants/apiUrls';
 import { getCamleCaseString } from '../../constants/pokemon.types';
 import PokemonContext from '../../context/pokemonContext/pokmon.context';
-import { getAllParallelCall, getPokemonGenders, getPokemonTypes, removeDuplicateBy } from '../../services/common.service';
+import {
+  getAllParallelCall,
+  getPokemonGenders,
+  getPokemonTypes,
+  removeDuplicateBy,
+} from '../../services/common.service';
 import './filter.scss';
 import AppMultiSelectDropDown from './multiSelectdropDown/multiSelectdropDown';
 import SearchFilter from './search/search.filter';
@@ -15,7 +20,13 @@ interface AppFilterProps {
 }
 
 const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
-  const { state, getPokemonData, dispatch, setAppLoading, getPokemonDetailsListByUrl } = useContext(PokemonContext) as any;
+  const {
+    state,
+    getPokemonData,
+    dispatch,
+    setAppLoading,
+    getPokemonDetailsListByUrl,
+  } = useContext(PokemonContext) as any;
   const { allPokemonsList, pokemonsTypes, pokemonGenderList } = state;
 
   const [isOpenTypeFilter, setIsOpenTypeFilter] = useState<boolean>(false);
@@ -43,7 +54,11 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
       data$ = of(allPokemonsList).pipe(
         debounceTime(400),
         distinctUntilChanged(),
-        map((pokemons) => pokemons.filter((item: any) => item.name.toLowerCase().includes(value.toLowerCase())))
+        map((pokemons) =>
+          pokemons.filter((item: any) =>
+            item.name.toLowerCase().includes(value.toLowerCase())
+          )
+        )
       );
     } else {
       filterPokemonData([]);
@@ -66,17 +81,19 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
     event.preventDefault();
     if (value.length) {
       isFilterEnable(true);
-      getAllParallelCall(value).then((pokemonList: any[]) => {
-        pokemonList = pokemonList.map((res) => res.pokemon);
-        pokemonList = pokemonList.flat().map((res) => res.pokemon);
-        pokemonList = removeDuplicateBy(pokemonList as [], 'name');
-        if (pokemonList.length > SEARCH_SLICED) {
-          pokemonList = pokemonList.slice(-SEARCH_SLICED);
-        }
-        getPokemonDetailsListByUrl(pokemonList).then((res: any) => {
-          filterPokemonData(res);
-        });
-      }).catch((err) => new Error(err));
+      getAllParallelCall(value)
+        .then((pokemonList: any[]) => {
+          pokemonList = pokemonList.map((res) => res.pokemon);
+          pokemonList = pokemonList.flat().map((res) => res.pokemon);
+          pokemonList = removeDuplicateBy(pokemonList as [], 'name');
+          if (pokemonList.length > SEARCH_SLICED) {
+            pokemonList = pokemonList.slice(-SEARCH_SLICED);
+          }
+          getPokemonDetailsListByUrl(pokemonList).then((res: any) => {
+            filterPokemonData(res);
+          });
+        })
+        .catch((err) => new Error(err));
     } else {
       filterPokemonData([]);
       getPokemonData(true);
@@ -88,18 +105,30 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
     event.preventDefault();
     if (value.length) {
       isFilterEnable(true);
-      getAllParallelCall(value).then((pokemonList: any[]) => {
-        pokemonList = pokemonList.map((res) => res.pokemon_species_details).flat();
-        pokemonList = pokemonList.map((res) => baseURL + '/pokemon' + res.pokemon_species.url.split('pokemon-species')[1]);
-        pokemonList = [...new Set(pokemonList)];
-        if (pokemonList.length > SEARCH_SLICED) {
-          pokemonList = [...pokemonList.slice(0, SEARCH_SLICED), ...pokemonList.slice(-SEARCH_SLICED)];
-        }
-        pokemonList = pokemonList.map((res) => ({ url: res }));
-        getPokemonDetailsListByUrl(pokemonList).then((res: any) => {
-          filterPokemonData(res);
-        });
-      }).catch((err) => new Error(err));
+      getAllParallelCall(value)
+        .then((pokemonList: any[]) => {
+          pokemonList = pokemonList
+            .map((res) => res.pokemon_species_details)
+            .flat();
+          pokemonList = pokemonList.map(
+            (res) =>
+              baseURL +
+              '/pokemon' +
+              res.pokemon_species.url.split('pokemon-species')[1]
+          );
+          pokemonList = [...new Set(pokemonList)];
+          if (pokemonList.length > SEARCH_SLICED) {
+            pokemonList = [
+              ...pokemonList.slice(0, SEARCH_SLICED),
+              ...pokemonList.slice(-SEARCH_SLICED),
+            ];
+          }
+          pokemonList = pokemonList.map((res) => ({ url: res }));
+          getPokemonDetailsListByUrl(pokemonList).then((res: any) => {
+            filterPokemonData(res);
+          });
+        })
+        .catch((err) => new Error(err));
     } else {
       filterPokemonData([]);
       getPokemonData(true);
@@ -116,7 +145,11 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
 
   const setPokemonTypes = (data: any[]) => {
     if (data.length) {
-      data = data.map((item) => ({ label: getCamleCaseString(item.name), value: item.url, url: item.url }));
+      data = data.map((item) => ({
+        label: getCamleCaseString(item.name),
+        value: item.url,
+        url: item.url,
+      }));
       dispatch({
         type: 'ACTIONS.SET_POKEMON_TYPE',
         payload: data,
@@ -130,7 +163,11 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
   };
 
   const setPokemonGendersList = (genderList: any[]) => {
-    genderList = genderList.map((item) => ({ label: getCamleCaseString(item.name), value: item.url, url: item.url }));
+    genderList = genderList.map((item) => ({
+      label: getCamleCaseString(item.name),
+      value: item.url,
+      url: item.url,
+    }));
     if (genderList.length) {
       dispatch({
         type: 'ACTIONS.SET_POKEMON_GENDER_LIST',
@@ -145,19 +182,23 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
   };
 
   const getAllPokemonType = async () => {
-    getPokemonTypes().then((res) => {
-      setPokemonTypes(res.results);
-    }).catch((err) => {
-      return new Error(err);
-    });
+    getPokemonTypes()
+      .then((res) => {
+        setPokemonTypes(res.results);
+      })
+      .catch((err) => {
+        return new Error(err);
+      });
   };
 
   const getPokemonGendersList = async () => {
-    getPokemonGenders().then((res) => {
-      setPokemonGendersList(res.results);
-    }).catch((err) => {
-      return new Error(err);
-    });
+    getPokemonGenders()
+      .then((res) => {
+        setPokemonGendersList(res.results);
+      })
+      .catch((err) => {
+        return new Error(err);
+      });
   };
 
   useEffect(() => {
@@ -172,17 +213,39 @@ const AppFilter: FC<AppFilterProps> = ({ isFilterEnable }) => {
           <Row className="filter-row-wrap show-grid">
             <Col lg={16} xl={16} xs={24} sm={24}>
               <div>
-                <SearchFilter placeholder="Name or Number" inputClass="pokemon-search-filter" label="Search By" onChangeHandler={onSearchChangeHandler} />
+                <SearchFilter
+                  placeholder="Name or Number"
+                  inputClass="pokemon-search-filter"
+                  label="Search By"
+                  onChangeHandler={onSearchChangeHandler}
+                />
               </div>
             </Col>
             <Col lg={4} xl={4} xs={24} sm={24}>
               <div>
-                <AppMultiSelectDropDown placeholder="Select Types" isOpen={isOpenTypeFilter} data={pokemonsTypes} label="Type" onChangeHandler={onTypeChangeHandler} onOpenHandler={onOpenTypeHandler} onCloseHandler={onCloseTypeHandler} onCleanHandler={onCleanTypeHandler} />
+                <AppMultiSelectDropDown
+                  placeholder="Select Types"
+                  isOpen={isOpenTypeFilter}
+                  data={pokemonsTypes}
+                  label="Type"
+                  onChangeHandler={onTypeChangeHandler}
+                  onOpenHandler={onOpenTypeHandler}
+                  onCloseHandler={onCloseTypeHandler}
+                  onCleanHandler={onCleanTypeHandler}
+                />
               </div>
             </Col>
             <Col lg={4} xl={4} xs={24} sm={24}>
               <div>
-                <AppMultiSelectDropDown placeholder="Select Gender" isOpen={isOpenGenderFilter} data={pokemonGenderList} label="Gender" onChangeHandler={onGenderChangeHandler} onOpenHandler={onOpenGenderHandler} onCloseHandler={onCloseGenderHandler} />
+                <AppMultiSelectDropDown
+                  placeholder="Select Gender"
+                  isOpen={isOpenGenderFilter}
+                  data={pokemonGenderList}
+                  label="Gender"
+                  onChangeHandler={onGenderChangeHandler}
+                  onOpenHandler={onOpenGenderHandler}
+                  onCloseHandler={onCloseGenderHandler}
+                />
               </div>
             </Col>
           </Row>

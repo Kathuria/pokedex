@@ -22,7 +22,9 @@ describe('ColorfulTag Component', () => {
   it('applies the correct background style', () => {
     render(<ColorfulTag {...mockProps} />);
     const tagElement = screen.getByText(/Electric/i);
-    expect(tagElement).toHaveStyle('background: linear-gradient(to right, #ff7e5f, #feb47b)');
+    expect(tagElement).toHaveStyle(
+      'background: linear-gradient(to right, #ff7e5f, #feb47b)'
+    );
   });
 
   it('applies the correct className', () => {

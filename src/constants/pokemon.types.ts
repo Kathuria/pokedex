@@ -1,121 +1,132 @@
-export const POKEMON_TYPE: Record<string, {color: string, hex?: string}> = Object.freeze({
+export const POKEMON_TYPE: Record<string, { color: string; hex?: string }> =
+  Object.freeze({
     normal: {
-        color: "#DDCBD0",
-        hex: ""
+      color: '#DDCBD0',
+      hex: '',
     },
     fighting: {
-        color: "#FCC1B0",
-        hex: ""
+      color: '#FCC1B0',
+      hex: '',
     },
     flying: {
-        color: "#B2D2E8",
-        hex: ""
+      color: '#B2D2E8',
+      hex: '',
     },
     poison: {
-        color: "#CFB7ED",
-        hex: ""
+      color: '#CFB7ED',
+      hex: '',
     },
     ground: {
-        color: "#F4D1A6",
-        hex: ""
+      color: '#F4D1A6',
+      hex: '',
     },
     rock: {
-        color: "#C5AEA8",
-        hex: ""
+      color: '#C5AEA8',
+      hex: '',
     },
     bug: {
-        color: "#C1E0C8",
-        hex: ""
+      color: '#C1E0C8',
+      hex: '',
     },
     ghost: {
-        color: "#D7C2D7",
-        hex: ""
+      color: '#D7C2D7',
+      hex: '',
     },
     steel: {
-        color: "#C2D4CE",
-        hex: ""
+      color: '#C2D4CE',
+      hex: '',
     },
     fire: {
-        color: "#EDC2C4",
-        hex: ""
+      color: '#EDC2C4',
+      hex: '',
     },
     water: {
-        color: "#CBD5ED",
-        hex: ""
+      color: '#CBD5ED',
+      hex: '',
     },
     grass: {
-        color: "#C0D4C8",
-        hex: ""
+      color: '#C0D4C8',
+      hex: '',
     },
     electric: {
-        color: "#E2E2A0",
-        hex: ""
+      color: '#E2E2A0',
+      hex: '',
     },
     psychic: {
-        color: "#DDC0CF",
-        hex: ""
+      color: '#DDC0CF',
+      hex: '',
     },
     ice: {
-        color: "#C7D7DF",
-        hex: ""
+      color: '#C7D7DF',
+      hex: '',
     },
     dragon: {
-        color: "#CADCDF",
-        hex: ""
+      color: '#CADCDF',
+      hex: '',
     },
     dark: {
-        color: "#C6C5E3",
-        hex: ""
+      color: '#C6C5E3',
+      hex: '',
     },
     fairy: {
-        color: "#E4C0CF",
-        hex: ""
+      color: '#E4C0CF',
+      hex: '',
     },
     unknown: {
-        color: "#C0DFDD",
-        hex: ""
+      color: '#C0DFDD',
+      hex: '',
     },
     shadow: {
-        color: "#CACACA",
-        hex: ""
-    }
-})
+      color: '#CACACA',
+      hex: '',
+    },
+  });
 
 export const getPokcolor = (type: any) => {
-    return POKEMON_TYPE[type] ? POKEMON_TYPE[type].color : POKEMON_TYPE['unknown'].color;
-}
+  return POKEMON_TYPE[type]
+    ? POKEMON_TYPE[type].color
+    : POKEMON_TYPE['unknown'].color;
+};
 
 export const getBackground = (pokemonTypes: any) => {
-    let color = "";
-    if (pokemonTypes.length) {
-        var { type: { name: pokemontype1 } } = pokemonTypes[0];
-    }
-    if (pokemonTypes.length > 1) {
-        const { type: { name: pokemontype2 } } = pokemonTypes[1];
-        color = `linear-gradient(180deg, ${getPokcolor(pokemontype1)} 0%, ${getPokcolor(pokemontype2)} 100%)`;
-    } else {
-        const { type: { name: pokemontype1 } } = pokemonTypes[0];
-        color = getPokcolor(pokemontype1)
-    }
-    return color;
-}
-
+  let color = '';
+  if (pokemonTypes.length) {
+    var {
+      type: { name: pokemontype1 },
+    } = pokemonTypes[0];
+  }
+  if (pokemonTypes.length > 1) {
+    const {
+      type: { name: pokemontype2 },
+    } = pokemonTypes[1];
+    color = `linear-gradient(180deg, ${getPokcolor(pokemontype1)} 0%, ${getPokcolor(pokemontype2)} 100%)`;
+  } else {
+    const {
+      type: { name: pokemontype1 },
+    } = pokemonTypes[0];
+    color = getPokcolor(pokemontype1);
+  }
+  return color;
+};
 
 export const getPokemonDescription = (data = []) => {
-    if (data.length) {
-        const uniqueTextArray: Array<string> = [];
-        return data.reduce((acc, next: {language: any, flavor_text: string}) => {
-            if (next.language.name === "en" && !uniqueTextArray.includes(next.flavor_text)) {
-                uniqueTextArray.push(next.flavor_text);
-                return acc += next.flavor_text.replace(/\n|\f/g, " ");
-            }
-            return acc;
-        }, "");
-    }
-    return "";
-}
+  if (data.length) {
+    const uniqueTextArray: Array<string> = [];
+    return data.reduce((acc, next: { language: any; flavor_text: string }) => {
+      if (
+        next.language.name === 'en' &&
+        !uniqueTextArray.includes(next.flavor_text)
+      ) {
+        uniqueTextArray.push(next.flavor_text);
+        return (acc += next.flavor_text.replace(/\n|\f/g, ' '));
+      }
+      return acc;
+    }, '');
+  }
+  return '';
+};
 
-export const getCamleCaseString = (str = "") => {
-    if (!str) return "";
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
+export const getCamleCaseString = (str = '') => {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};

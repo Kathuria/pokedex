@@ -7,7 +7,9 @@ export default {
   component: Header,
 } as Meta;
 
-const Template: StoryFn<{ children: React.ReactNode }> = (args: any) => <Header {...args} />;
+const Template: StoryFn<{ children: React.ReactNode }> = (args: any) => (
+  <Header {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

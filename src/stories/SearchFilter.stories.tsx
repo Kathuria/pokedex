@@ -13,7 +13,9 @@ export default {
   },
 } as Meta<typeof SearchFilter>;
 
-const Template: StoryFn<typeof SearchFilter> = (args) => <SearchFilter {...args} />;
+const Template: StoryFn<typeof SearchFilter> = (args) => (
+  <SearchFilter {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

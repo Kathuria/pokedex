@@ -10,6 +10,9 @@ module.exports = {
     '/dist/',
     '\\.stories\\.(js|jsx|ts|tsx)$'
   ],
+  testMatch: [
+    '**/?(*.)+(test).ts?(x)'
+  ],
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageReporters: ['json', 'lcov', 'text', 'clover'],

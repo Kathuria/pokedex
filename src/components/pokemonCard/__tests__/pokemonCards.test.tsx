@@ -3,7 +3,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import PokemonCard from '../pokemonCard';
 
 jest.mock('../../../constants/pokemon.types', () => ({
-  getBackground: jest.fn(() => 'linear-gradient(to right, #30cfd0 0%, #330867 100%)'),
+  getBackground: jest.fn(
+    () => 'linear-gradient(to right, #30cfd0 0%, #330867 100%)'
+  ),
 }));
 
 jest.mock('../../../services/common.service', () => ({
@@ -28,7 +30,13 @@ describe('PokemonCard Component', () => {
   const mockOnClick = jest.fn();
 
   beforeEach(() => {
-    render(<PokemonCard data={mockData} onClick={mockOnClick} className="test-class" />);
+    render(
+      <PokemonCard
+        data={mockData}
+        onClick={mockOnClick}
+        className="test-class"
+      />
+    );
   });
 
   it('renders the Pokemon name and formatted ID', () => {
@@ -44,7 +52,9 @@ describe('PokemonCard Component', () => {
 
   it('applies the correct background style', () => {
     const card = screen.getByRole('presentation');
-    expect(card).toHaveStyle('background: linear-gradient(to right, #30cfd0 0%, #330867 100%)');
+    expect(card).toHaveStyle(
+      'background: linear-gradient(to right, #30cfd0 0%, #330867 100%)'
+    );
   });
 
   it('handles click events', () => {
@@ -52,5 +62,4 @@ describe('PokemonCard Component', () => {
     fireEvent.click(card);
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
-
 });

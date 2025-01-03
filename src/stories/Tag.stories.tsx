@@ -18,7 +18,9 @@ export default {
   },
 } as Meta<typeof ColorfulTag>;
 
-const Template: StoryFn<typeof ColorfulTag> = (args) => <ColorfulTag {...args} />;
+const Template: StoryFn<typeof ColorfulTag> = (args) => (
+  <ColorfulTag {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
