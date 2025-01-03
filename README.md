@@ -15,11 +15,11 @@ Follow any Generative AI tools of your choice (e.g. Slingshot, AI Code Companion
 ## Evalution Result
 |Criteria|	Score|	Explanation|
 |:--------|:-----------:|:-------------|
-|Code Quality|8|The code is well organized with clear ESLint rules promoting quality. However, more documentation or project overview could enhance the understanding of overall quality practices.|
-|Typescript|9|The presence of TypeScript configurations indicates a robust integration but insights into full implementation are limited without access to additional TypeScript type definitions.|
-|React Testing Library|6|Lack of direct evidence of RTL integration in the provided snippet reduces the overall evaluation score concerning its use and configuration.|
-|Storybook|9|Tailored Storybook configurations with various addons suggest a capable setup. Ensuring coverage for all components could enhance evaluation.|
-|Jest|7|Jest is referenced within the configuration, but information on test coverage or specific configurations is sparse, necessitating more insight for comprehensive evaluation.|
+|Code Quality|9/10|The use of ESLint and plugins like Prettier, React-Hooks, and JSX-A11y indicates a focus on code quality. Accessibility and styling are well-considered.|
+|TypeScript|10/10|The TypeScript setup is robust with the use of @typescript-eslint, ensuring type safety and enhanced tooling.|
+|React Testing Library|8/10|React Testing Library is included, showing a commitment to testing, although further details on test cases are not provided.|
+|Storybook|8/10|Storybook is detected, indicating support for visual component building, although implementation specifics are absent.|
+|Jest|8/10|Jest is noted, suggesting testing frameworks presence, but additional test examples or configurations are not detailed.|
 
 ## Preview
 
