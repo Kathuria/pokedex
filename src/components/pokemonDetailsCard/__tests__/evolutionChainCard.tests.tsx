@@ -12,13 +12,13 @@ describe('EvolutionChainCard Component', () => {
     name: 'Bulbasaur',
   };
 
-  test('renders the correct number of PokemonCards', () => {
+  it('renders the correct number of PokemonCards', () => {
     render(<EvolutionChainCard data={mockData} />);
     const pokemonCards = screen.getAllByTestId('pokemon-card');
     expect(pokemonCards).toHaveLength(3);
   });
 
-  test('renders the right arrow icon between PokemonCards', () => {
+  it('renders the right arrow icon between PokemonCards', () => {
     render(<EvolutionChainCard data={mockData} />);
     const rightArrowIcons = screen.getAllByAltText(/right arrow icon/i);
     expect(rightArrowIcons).toHaveLength(2);

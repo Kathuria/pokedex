@@ -21,7 +21,7 @@ describe('HomePage Component', () => {
     getPokemonData: jest.fn(),
   };
 
-  test('renders header and filter components', () => {
+  it('renders header and filter components', () => {
     render(
       <PokemonContext.Provider value={mockContextValue as any}>
         <HomePage />
@@ -32,7 +32,7 @@ describe('HomePage Component', () => {
     expect(screen.getByText(/Filter/i)).toBeInTheDocument();
   });
 
-  test('renders pokemon cards', () => {
+  it('renders pokemon cards', () => {
     render(
       <PokemonContext.Provider value={mockContextValue as any}>
         <HomePage />
@@ -45,7 +45,7 @@ describe('HomePage Component', () => {
     expect(screen.getByText(/Ivysaur/i)).toBeInTheDocument();
   });
 
-  test('shows loading indicator when loading', () => {
+  it('shows loading indicator when loading', () => {
     const loadingState = { ...mockState, isLoading: true };
     render(
       <PokemonContext.Provider value={{ ...mockContextValue, state: loadingState } as any}>
@@ -56,7 +56,7 @@ describe('HomePage Component', () => {
     expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
   });
 
-  test('shows no data found message when pokemon list is empty', () => {
+  it('shows no data found message when pokemon list is empty', () => {
     const emptyState = { ...mockState, pokemonsList: [] };
     render(
       <PokemonContext.Provider value={{ ...mockContextValue, state: emptyState } as any}>

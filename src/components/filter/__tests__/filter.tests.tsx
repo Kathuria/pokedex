@@ -26,35 +26,35 @@ describe('AppFilter Component', () => {
     );
   });
 
-  test('renders search input', () => {
+  it('renders search input', () => {
     const searchInput = screen.getByPlaceholderText(/name or number/i);
     expect(searchInput).toBeInTheDocument();
   });
 
-  test('calls isFilterEnable when search input changes', () => {
+  it('calls isFilterEnable when search input changes', () => {
     const searchInput = screen.getByPlaceholderText(/name or number/i);
     fireEvent.change(searchInput, { target: { value: 'pikachu' } });
     expect(isFilterEnableMock).toHaveBeenCalledWith(true);
   });
 
-  test('renders type filter dropdown', () => {
+  it('renders type filter dropdown', () => {
     const typeDropdown = screen.getByText(/select types/i);
     expect(typeDropdown).toBeInTheDocument();
   });
 
-  test('renders gender filter dropdown', () => {
+  it('renders gender filter dropdown', () => {
     const genderDropdown = screen.getByText(/select gender/i);
     expect(genderDropdown).toBeInTheDocument();
   });
 
-  test('calls isFilterEnable when type filter changes', () => {
+  it('calls isFilterEnable when type filter changes', () => {
     const typeDropdown = screen.getByText(/select types/i);
     fireEvent.click(typeDropdown);
     fireEvent.click(screen.getByText(/electric/i));
     expect(isFilterEnableMock).toHaveBeenCalledWith(true);
   });
 
-  test('calls isFilterEnable when gender filter changes', () => {
+  it('calls isFilterEnable when gender filter changes', () => {
     const genderDropdown = screen.getByText(/select gender/i);
     fireEvent.click(genderDropdown);
     fireEvent.click(screen.getByText(/male/i));
