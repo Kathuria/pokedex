@@ -15,5 +15,5 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "jest.setup.js"]
+  "include": ["src"]
 }

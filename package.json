@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --config jest.config.js --silent",
+    "test": "jest --config jest.config.js --silent --coverage",
     "test-dev": "jest --config jest.config.js --watch",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{ts,tsx}",
